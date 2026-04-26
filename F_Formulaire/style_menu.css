@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+    perspective:1000px;
+}
+
+/* PARTICLES */
+#particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+/* CURSOR */
+.cursor{
+    width:20px;
+    height:20px;
+    border:2px solid #ff00c8;
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:9999;
+}
+
+.cursor.active{
+    transform:translate(-50%,-50%) scale(2);
+    background:rgba(255,0,200,0.2);
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    margin-top:50px;
+}
+
+h1{
+    font-size:2.5rem;
+    background:linear-gradient(90deg,#00f7ff,#007bff);
+    background-size:200%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 4s linear infinite;
+}
+
+@keyframes shine{
+    0%{background-position:0%}
+    100%{background-position:200%}
+}
+
+/* FORM */
+form{
+    max-width:500px;
+    margin:60px auto;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 40px rgba(126,34,206,0.8);
+    border:1px solid rgba(255,255,255,0.2);
+    transform-style:preserve-3d;
+    transition:0.3s;
+}
+
+.Infos, button{
+    transform:translateZ(30px);
+}
+
+.Infos{
+    margin-bottom:15px;
+    display:flex;
+    flex-direction:column;
+}
+.Infos sexe{
+    display:flex;
+    flex-direction:row-reverse;
+}
+input{
+    padding:14px;
+    border-radius:12px;
+    border:1px solid transparent;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    transition:0.3s;
+}
+
+input:focus{
+    border-color:#ff00c8;
+    box-shadow:0 0 20px #ff00c8, 0 0 40px #7e22ce;
+    transform:scale(1.02);
+}
+
+small{
+    color:#ff4d4d;
+    visibility:hidden;
+}
+
+.Infos.error small{
+    visibility:visible;
+}
+
+/* BUTTON */
+button{
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,#00f5ff,#ff00c8);
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #ff00c8, 0 0 50px #00f5ff;
+}
+
+/* SCROLL */
+.hidden{
+    opacity:0;
+    transform:translateY(80px);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
